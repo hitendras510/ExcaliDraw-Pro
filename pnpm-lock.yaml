@@ -82,9 +82,15 @@ importers:
       '@types/express':
         specifier: ^5.0.6
         version: 5.0.6
+      '@types/jsonwebtoken':
+        specifier: ^9.0.10
+        version: 9.0.10
       express:
         specifier: ^5.2.1
         version: 5.2.1
+      jsonwebtoken:
+        specifier: ^9.0.3
+        version: 9.0.3
       ws:
         specifier: ^8.19.0
         version: 8.19.0
@@ -95,6 +101,12 @@ importers:
       '@types/ws':
         specifier: ^8.18.1
         version: 8.18.1
+
+  packages/backend-common:
+    dependencies:
+      '@types/node':
+        specifier: ^22.15.3
+        version: 22.15.3
 
   packages/eslint-config:
     devDependencies:

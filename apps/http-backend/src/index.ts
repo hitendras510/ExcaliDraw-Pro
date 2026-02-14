@@ -1,14 +1,21 @@
 import { Express } from "express";
 import jwt from "jsonwebtoken";
-import {JWT_SECRET} from "./config";
+import { JWT_SECRET } from "@repo/backend-common/config";
 import { middleware } from "./middleware";
 import { Request, Response } from "express";
+import { CreateUserSchema } from "@repo/backend-common";
 
 const app = require("express")();
 
 
 app.post("/signup",(req:Request,res:Response)=>{
-    
+    const data = CreateUserSchema.parse(req.body);
+    if(!data.success){
+         res.json({
+            message: "Incorrect message "
+        })
+        return;
+    }
     res.json({
         userId: 123
     })
